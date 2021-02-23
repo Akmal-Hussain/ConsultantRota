@@ -12,6 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.time.LocalDate;
@@ -58,7 +59,7 @@ public class WorkingSolution extends JFrame{
     JScrollPane scroller; 
     Solver<ShiftList> solver;
     
-    public WorkingSolution () {
+    public WorkingSolution ()  {
         super("Processing Problem");
         SetLookAndFeel.setLookAndFeel();
         JPanel pane = new JPanel();
@@ -168,16 +169,15 @@ public class WorkingSolution extends JFrame{
         setVisible(true);
         SolverFactory<ShiftList> solverFactory;
         try {
-            solverFactory = SolverFactory.createFromXmlInputStream((
-                    new FileInputStream("Resources/Configuration/config.xml")));
-             solver = solverFactory.buildSolver();
-        runSolver();
-        } catch (FileNotFoundException ex) {
-            System.out.println("Problematic...");
+            solverFactory =  SolverFactory.createFromXmlInputStream(new FileInputStream("Resources/Configuration/config.xml"));
+            solver = solverFactory.buildSolver();
+            runSolver();
+            ;
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
-;
-        
-        
+
+
     }
     /**
      * @param args the command line arguments

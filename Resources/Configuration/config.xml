@@ -50,7 +50,6 @@ and open the template in the editor.
   <acceptedCountLimit>1</acceptedCountLimit>
   </forager>
 </localSearch>
-</localSearch>
   <localSearch>
        <termination>
   <unimprovedSpentLimit>PT3H0M3S</unimprovedSpentLimit>
