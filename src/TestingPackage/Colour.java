@@ -14,7 +14,7 @@ import java.util.List;
  */
 public final class Colour {
     private final static List<Integer> list = new ArrayList<>();
-    hello world
+
     Colour(){    
     list.add(1);
     list.add(2);
